@@ -1,15 +1,30 @@
-function Rps() {
-    this.check = (number) => {
-        if (number == 0 || isNaN(number)) {
-            return 'Please put in a valid number';
-        } else if (number % 15 === 0) {
-            return 'FizzBuzz';
-        } else if (number % 5 === 0) {
-            return 'Buzz';
-        } else if (number % 3 === 0) {
-            return 'Fizz';
+
+class RoundCalculator {
+    constructor(draw1, draw2) {
+        this.draw1 = draw1
+        this.draw2 = draw2
+}
+    setDraw1() {
+        if (this.draw1 == "rock") {
+            return "Rock";
+        } else if (this.draw1 == "paper") {
+            return "Paper";
+        } else if (this.draw1 == "scissors") {
+            return "Scissors";
         } else {
-            return number
+            return "No valid draw"
         }
-    } 
+    }
+
+    setDraw2() {
+        if (this.draw2 == "rock") {
+            return "Rock";
+        } else if (this.draw2 == "paper") {
+            return "Paper";
+        } else if (this.draw2 == "scissors") {
+            return "Scissors";
+        } else {
+            return "No valid draw"
+        }
+    }
 }
