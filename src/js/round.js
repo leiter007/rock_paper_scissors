@@ -5,19 +5,20 @@ class Round {
     }
     
     setDrawOptions () {
-        this.draw.player1 = this.player1_Draw()
+        this.draw.player1 = this.player1_Draw(draw)
         this.draw.player2 = this.player2_Draw()
     }
 
-    player1_Draw() {
-        return "Rock"
+    player1_Draw(draw) {
+        if (draw == "rock") {
+            return "Rock"
+        }
     }
 
     player2_Draw() {
-        //let options = ["Rock", "Paper", "Scissors"]
-        //let random = options[Math.floor(Math.random()*3)]
-        //return random
-        return "Paper"
+        let options = ["Rock", "Paper", "Scissors"]
+        let random = options[Math.floor(Math.random()*3)]
+        return random
     }
 
     calculateDraw() {

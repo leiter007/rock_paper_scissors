@@ -1,12 +1,20 @@
 const { Round } = require('../spec.helper')
 
 describe("Round", function() {
+    
+    let round = new Round()
 
-    it("returns correct win message", () => {
-        let round = new Round()
-        round.setDrawOptions();
-        round.calculateDraw();
-        expect(round.calculateDraw()).to.equal("Paper beats Rock, you lose!")
+    it('round should be an instace of Round', () => {
+        expect(round).to.be.an.instanceOf(Round)
+    })
+
+    it("Player1 returns a value", () => {
+        let draw1 = "rock"
+        expect(round.player1_Draw(draw1)).to.equal("Rock")
+    })
+
+    it("Player2 returns one of Rock, Paper or Scissors", () => {
+        expect(round.player2_Draw()).to.be.oneOf(["Rock","Paper","Scissors"])
     })
 
 
@@ -16,34 +24,6 @@ describe("Round", function() {
     //     expect(roundCalc.calculateDraw()).to.equal("No winner")
     // })
 
-    // it("returns Paper for Draw1 if paper is inserted", () => {
-    //     let roundCalc = new RoundCalculator("paper", "paper")
-    //     roundCalc.setDraw1();
-    //     expect(roundCalc.setDraw1()).to.equal("Paper")
-    // })
-
-    // it("returns No valid draw for Draw1 if invalid draw", () => {
-    //     let roundCalc = new RoundCalculator("hello", "paper")
-    //     roundCalc.setDraw1();
-    //     expect(roundCalc.setDraw1()).to.equal("No valid draw")
-    // })
-
-    // it("returns Rock for Draw2 if rock is inserted", () => {
-    //     let roundCalc = new RoundCalculator("rock", "rock")
-    //     roundCalc.setDraw2();
-    //     expect(roundCalc.setDraw2()).to.equal("Rock")
-    // })
-
-    // it("returns Paper for Draw2 if paper is inserted", () => {
-    //     let roundCalc = new RoundCalculator("paper", "paper")
-    //     roundCalc.setDraw2();
-    //     expect(roundCalc.setDraw2()).to.equal("Paper")
-    // })
-
-    // it("returns No valid draw for Draw1 if invalid draw", () => {
-    //     let roundCalc = new RoundCalculator("paper", "hello")
-    //     roundCalc.setDraw2();
-    //     expect(roundCalc.setDraw2()).to.equal("No valid draw")
-    // })
+   
 
 })

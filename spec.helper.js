@@ -5,5 +5,5 @@ global.expect = chai.expect;
 
 const fs = require('fs');
 
-let calc = fs.readFileSync('./src/js/round_calc.js');
+let calc = fs.readFileSync('./src/js/round.js');
 eval(calc + `\nexports.Round = Round;`)
