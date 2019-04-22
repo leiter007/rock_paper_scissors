@@ -4,16 +4,14 @@ class Round {
         this.draw = {}
     }
     
-    setDrawOptions () {
+    setDraws (draw) {
         this.draw.player1 = this.player1_Draw(draw)
         this.draw.player2 = this.player2_Draw()
     }
 
     player1_Draw(draw) {
-        if (draw == "rock") {
-            return "Rock"
-        }
-    }
+        return(draw)
+    }   
 
     player2_Draw() {
         let options = ["Rock", "Paper", "Scissors"]
@@ -38,7 +36,7 @@ class Round {
         } else if (d1 == "Scissors" && d2 == "Rock") {
             return "Rock beats Scissors, you lose!"
         } else if (d1 == "Scissors" && d2 == "Paper") {
-            return "Scissor beats Paper, you win!"
+            return "Scissors beats Paper, you win!"
         }
         
     }
