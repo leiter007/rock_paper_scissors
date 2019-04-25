@@ -40,17 +40,41 @@
     
 <script type="text/javascript">
 
-const rockButton = document.getElementById("rock-btn")
+const rockBtn = document.getElementById("rock-btn")
+const paperBtn = document.getElementById("paper-btn")
+const scissorsBtn = document.getElementById("scissors-btn")
 const displayResult = document.getElementById("display_result")
 const player1_message = document.getElementById("player1_selection")
 const player2_message = document.getElementById("player2_selection")
 
     document.addEventListener('DOMContentLoaded', () => {
         
-        rockButton.addEventListener("click", () => {
+        rockBtn.addEventListener("click", () => {
             event.preventDefault();
             let round = new Round
             let draw = "Rock"
+            round.setDraws(draw)
+
+            player1_message.innerHTML = `You played ${round.draw.player1}`
+            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            displayResult.innerHTML = `${round.calculateDraw()}`
+        })
+
+        paperBtn.addEventListener("click", () => {
+            event.preventDefault();
+            let round = new Round
+            let draw = "Paper"
+            round.setDraws(draw)
+
+            player1_message.innerHTML = `You played ${round.draw.player1}`
+            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            displayResult.innerHTML = `${round.calculateDraw()}`
+        })
+
+        scissorsBtn.addEventListener("click", () => {
+            event.preventDefault();
+            let round = new Round
+            let draw = "Scissors"
             round.setDraws(draw)
 
             player1_message.innerHTML = `You played ${round.draw.player1}`
