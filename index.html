@@ -53,13 +53,12 @@ const player2_message = document.getElementById("player2_selection")
             let draw = "Rock"
             round.setDraws(draw)
 
-            player1_message.innerHTML = `You played ${round.player1_Draw(draw)}`
-            player2_message.innerHTML = `Computer played ${round.player2_Draw()}`
-            displayResult.innerHTML = round.calculateDraw()
+            player1_message.innerHTML = `You played ${round.draw.player1}`
+            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            displayResult.innerHTML = `${round.calculateDraw()}`
         })
     })
 
-    
 </script>
 
 </script>
