@@ -52,8 +52,8 @@ const player2_message = document.getElementById("player2_selection")
         rockBtn.addEventListener("click", () => {
             event.preventDefault();
             let round = new Round
-            let draw = "Rock"
-            round.setDraws(draw)
+            let draw1 = "Rock"
+            round.setDraws(draw1)
 
             player1_message.innerHTML = `You played ${round.draw.player1}`
             player2_message.innerHTML = `Computer played ${round.draw.player2}`
@@ -63,8 +63,8 @@ const player2_message = document.getElementById("player2_selection")
         paperBtn.addEventListener("click", () => {
             event.preventDefault();
             let round = new Round
-            let draw = "Paper"
-            round.setDraws(draw)
+            let draw1 = "Paper"
+            round.setDraws(draw1)
 
             player1_message.innerHTML = `You played ${round.draw.player1}`
             player2_message.innerHTML = `Computer played ${round.draw.player2}`
@@ -74,8 +74,8 @@ const player2_message = document.getElementById("player2_selection")
         scissorsBtn.addEventListener("click", () => {
             event.preventDefault();
             let round = new Round
-            let draw = "Scissors"
-            round.setDraws(draw)
+            let draw1 = "Scissors"
+            round.setDraws(draw1)
 
             player1_message.innerHTML = `You played ${round.draw.player1}`
             player2_message.innerHTML = `Computer played ${round.draw.player2}`

@@ -8,7 +8,7 @@ describe("Round", function() {
         expect(round).to.be.an.instanceOf(Round)
     })
 
-    it("Player1 returns a value", () => {
+    it("Player1 returns correct value", () => {
         let draw1 = "Rock"
         expect(round.player1_Draw(draw1)).to.equal("Rock")
     })
@@ -28,19 +28,19 @@ describe("Round", function() {
         expect(round.calculateDraw()).to.equal("It's a tie")
 
         round.draw = {player1: "Rock", player2: "Paper"}
-        expect(round.calculateDraw()).to.equal("Paper beats Rock, you lose!")
+        expect(round.calculateDraw()).to.equal("Paper beats Rock, computer wins..")
 
         round.draw = {player1: "Rock", player2: "Scissors"}
         expect(round.calculateDraw()).to.equal("Rock beats Scissors, you win!")
 
         round.draw = {player1: "Paper", player2: "Scissors"}
-        expect(round.calculateDraw()).to.equal("Scissors beats Paper, you lose!")
+        expect(round.calculateDraw()).to.equal("Scissors beats Paper, computer wins..")
 
         round.draw = {player1: "Paper", player2: "Rock"}
         expect(round.calculateDraw()).to.equal("Paper beats Rock, you win!")
 
         round.draw = {player1: "Scissors", player2: "Rock"}
-        expect(round.calculateDraw()).to.equal("Rock beats Scissors, you lose!")
+        expect(round.calculateDraw()).to.equal("Rock beats Scissors, computer wins..")
 
         round.draw = {player1: "Scissors", player2: "Paper"}
         expect(round.calculateDraw()).to.equal("Scissors beats Paper, you win!")
