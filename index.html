@@ -9,30 +9,30 @@
     <title>Rock Paper Scissors</title>
 </head>
 
-<body class="text-grey-dark text-base pl-2 font-sans font-hairline">
+<body class="text-grey-darker text-xl pl-2 font-sans font-hairline">
 
 <div class="bg-teal-darker w-full align-middle text-grey-lightest bold pl-2 -ml-2 pt-4 pb-4 border-b border-grey-lighter text-3xl" >
     ROCK PAPER SCISSORS
 </div>
 
-<div id="player1_space" class="pt-5 w-1/3">
-    <div class="flex flex-wrap justify-between">
-        <button class="border border-grey" id="rock-btn">Rock</button>
-        <button class="border border-grey" id="paper-btn">Paper</button>
-        <button class="border border-grey" id="scissors-btn">Scissors</button>
+<div id="player1_space" class="pt-5 w-1/2">
+    <div class="flex flex-wrap justify-around mb-5">
+        <button class="p-2 rounded bg-grey-lighter border border-grey" id="rock-btn">Rock</button>
+        <button class="p-2 rounded bg-grey-lighter border border-grey" id="paper-btn">Paper</button>
+        <button class="p-2 rounded bg-grey-lighter border border-grey" id="scissors-btn">Scissors</button>
     </div>
 
-    <div class="h-5 m-3  border border-grey-lighter">
+    <div class="h-10 p-2 mt-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
         <p id="player1_selection"></p>
     </div>
 
-    <div class="h-5 m-3 border border-grey-lighter">
+    <div class="h-10 p-2 mt-2 mb-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
         <p id="player2_selection"></p>
     </div>
 
-    <div class="pt-3">
-        <div class="p-5 h-full border-b border-teal-darker border-t border-teal-darker bg-grey-lighter">
-            <span class="h-full w-full" id="display_result"></span>
+    <div class="pt-2">
+        <div class="h-12 p-2 mt-2 mb-2 border-b border-teal-darker border-t border-teal-darker bg-grey-lighter justify-center text-xl font-semibold">
+            <div id="display_result"></div>
         </div>
     </div>
 </div> 

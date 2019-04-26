@@ -18,17 +18,16 @@ describe("Round", function() {
     })
 
     it("should return correct message after round", () => {
-        let draw1 = "Rock"
-        round.setDraws(draw1)
+        round.draw.player1 = "Rock"
+        round.draw.player2 = "Paper"
         expect(round.calculateDraw()).to.equal("Paper beats Rock, you lose!")
     })
 
-
-    // it("returns correct tie message", () => {
-    //     let roundCalc = new RoundCalculator("rock", "rock")
-    //     roundCalc.calculateDraw();
-    //     expect(roundCalc.calculateDraw()).to.equal("No winner")
-    // })
+    it("should return correct message after round", () => {
+        round.draw.player1 = "Rock"
+        round.draw.player2 = "Rock"
+        expect(round.calculateDraw()).to.equal("It's a tie")
+    })
 
    
 
