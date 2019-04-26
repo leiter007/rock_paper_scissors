@@ -18,17 +18,33 @@ describe("Round", function() {
     })
 
     it("should return correct message after round", () => {
-        round.draw.player1 = "Rock"
-        round.draw.player2 = "Paper"
-        expect(round.calculateDraw()).to.equal("Paper beats Rock, you lose!")
-    })
-
-    it("should return correct message after round", () => {
-        round.draw.player1 = "Rock"
-        round.draw.player2 = "Rock"
+        round.draw = {player1: "Rock", player2: "Rock"}
         expect(round.calculateDraw()).to.equal("It's a tie")
-    })
 
+        round.draw = {player1: "Paper", player2: "Paper"}
+        expect(round.calculateDraw()).to.equal("It's a tie")
+
+        round.draw = {player1: "Scissors", player2: "Scissors"}
+        expect(round.calculateDraw()).to.equal("It's a tie")
+
+        round.draw = {player1: "Rock", player2: "Paper"}
+        expect(round.calculateDraw()).to.equal("Paper beats Rock, you lose!")
+
+        round.draw = {player1: "Rock", player2: "Scissors"}
+        expect(round.calculateDraw()).to.equal("Rock beats Scissors, you win!")
+
+        round.draw = {player1: "Paper", player2: "Scissors"}
+        expect(round.calculateDraw()).to.equal("Scissors beats Paper, you lose!")
+
+        round.draw = {player1: "Paper", player2: "Rock"}
+        expect(round.calculateDraw()).to.equal("Paper beats Rock, you win!")
+
+        round.draw = {player1: "Scissors", player2: "Rock"}
+        expect(round.calculateDraw()).to.equal("Rock beats Scissors, you lose!")
+
+        round.draw = {player1: "Scissors", player2: "Paper"}
+        expect(round.calculateDraw()).to.equal("Scissors beats Paper, you win!")
+    })
    
 
 })
