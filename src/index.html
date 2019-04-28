@@ -61,10 +61,13 @@ const storage = window.sessionStorage
             displayResult.innerHTML = `${round.calculateDraw()}`
 
             // Setting score
-            if (round.draw.winner == "player1"){
-
-            } 
-
+            if (round.draw.winner == "Player1"){
+                    window.sessionStorage.setItem(Date.now(), "Player1")
+            } else if (round.draw.winner == "Computer"){
+                    window.sessionStorage.setItem(Date.now(), "Computer")
+            } else if (round.draw.winner == "Tie"){
+                    window.sessionStorage.setItem(Date.now(), "Tie")
+            }
         })
 
         paperBtn.addEventListener("click", () => {
@@ -89,21 +92,10 @@ const storage = window.sessionStorage
             displayResult.innerHTML = `${round.calculateDraw()}`
         })
 
-        setScore = () => {
-            const storage = window.sessionStorage
-
-            if (round.
-
-        }
-
-
     })
 
 </script>
 
-</script>
 </body>
-
-
 
 </html>
