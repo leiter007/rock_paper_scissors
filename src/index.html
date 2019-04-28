@@ -127,8 +127,13 @@ const storage = window.sessionStorage
             player2score.innerHTML = `&nbsp;:&nbsp;${score.filter(checkPlayer2Wins).length}`
         }
 
-        checkPlayer1Wins = (string) => {return string == "Player1";}
-        checkPlayer2Wins = (string) => {return string == "Computer";}
+        checkPlayer1Wins = (string) => {
+            let player1 = round.player1_Name()
+            return string == player1}
+            
+        checkPlayer2Wins = (string) => {
+            let player2 = round.player2_Name()
+            return string == player2}
     })
 
 </script>
