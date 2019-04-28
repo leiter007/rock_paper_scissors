@@ -22,23 +22,36 @@ class Round {
     calculateDraw() {
         let d1 = this.draw.player1
         let d2 = this.draw.player2
-        let d1_winner = "you win!"
-        let d2_winner = "computer wins.."
+
+        let d1_winner = "Player1"
+        let d2_winner = "Computer"
+        let tie = "Tie"
+        
+        let d1_win_msg = "you win!"
+        let d2_win_msg = "computer wins.."
+        let tie_msg = "It's a tie"
 
         if (d1 == d2) {
-            return "It's a tie"
+            this.draw.winner = tie
+            return tie_msg
         } else if (d1 == "Rock" && d2 == "Paper") {
-            return `Paper beats Rock, ${d2_winner}`
+            this.draw.winner = d2_winner
+            return `Paper beats Rock, ${d2_win_msg}`
         } else if (d1 == "Rock" && d2 == "Scissors") {
-            return `Rock beats Scissors, ${d1_winner}`
+            this.draw.winner = d1_winner
+            return `Rock beats Scissors, ${d1_win_msg}`
         } else if (d1 == "Paper" && d2 == "Scissors") {
-            return `Scissors beats Paper, ${d2_winner}`
+            this.draw.winner = d2_winner
+            return `Scissors beats Paper, ${d2_win_msg}`
         } else if (d1 == "Paper" && d2 == "Rock") {
-            return `Paper beats Rock, ${d1_winner}`
+            this.draw.winner = d1_winner
+            return `Paper beats Rock, ${d1_win_msg}`
         } else if (d1 == "Scissors" && d2 == "Rock") {
-            return `Rock beats Scissors, ${d2_winner}`
+            this.draw.winner = d2_winner
+            return `Rock beats Scissors, ${d2_win_msg}`
         } else if (d1 == "Scissors" && d2 == "Paper") {
-            return `Scissors beats Paper, ${d1_winner}`
+            this.draw.winner = d1_winner
+            return `Scissors beats Paper, ${d1_win_msg}`
         }
     }
 }
