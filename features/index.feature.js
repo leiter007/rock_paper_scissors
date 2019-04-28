@@ -43,5 +43,17 @@ describe('User can play a Rock Paper Scissor round', () => {
     expect(player2_message).to.be.oneOf(["Computer played Rock","Computer played Paper","Computer played Scissors"])
   });
 
+  // it('saves winner session for all action buttons', async () => {
+
+  //   await browser.clickOnButton("button[id='rock-btn']")
+  //   await browser.clickOnButton("button[id='paper-btn']")
+  //   await browser.clickOnButton("button[id='scissors-btn']")
+
+  //   let drawCount = await this.page.evaluate(
+  //     () => this.window.sessionStorage.length)
+
+  //   expect(drawCount).to.eql(3)
+  // });
+
 });
 

@@ -4,6 +4,21 @@ class Round {
         this.draw = {}
     }
     
+    // Change names and win messages if Player 2 is not computer
+    player1_Name() {
+        return "Player1"
+    }
+    player2_Name() {
+        return "Computer"
+    }
+    player1_WinMsg() {
+        return "you win!"
+    }
+    player2_WinMsg() {
+        return "computer wins.."
+    }
+
+
     setDraws (draw1) {
         this.draw.player1 = this.player1_Draw(draw1)
         this.draw.player2 = this.player2_Draw()
@@ -13,6 +28,7 @@ class Round {
         return(draw1)
     }   
 
+    // Change here if Player 2 is not computer
     player2_Draw() {
         let options = ["Rock", "Paper", "Scissors"]
         let random = options[Math.floor(Math.random()*3)]
@@ -23,12 +39,12 @@ class Round {
         let d1 = this.draw.player1
         let d2 = this.draw.player2
 
-        let d1_winner = "Player1"
-        let d2_winner = "Computer"
+        let d1_winner = this.player1_Name()
+        let d2_winner = this.player2_Name()
         let tie = "Tie"
         
-        let d1_win_msg = "you win!"
-        let d2_win_msg = "computer wins.."
+        let d1_win_msg = this.player1_WinMsg()
+        let d2_win_msg = this.player2_WinMsg()
         let tie_msg = "It's a tie"
 
         if (d1 == d2) {

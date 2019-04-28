@@ -35,6 +35,19 @@
             <div id="display_result"></div>
         </div>
     </div>
+
+    <div class="pt-2">
+        <div class="h-10 p-2 mt-2 mb-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
+            <div id="display_score_player1"></div>
+        </div>
+    </div>
+    <div class="pt-2">
+        <div class="h-10 p-2 mt-2 mb-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
+            <div id="display_score_player2"></div>
+        </div>
+    </div>
+
+
 </div> 
 
     
@@ -44,8 +57,10 @@ const rockBtn = document.getElementById("rock-btn")
 const paperBtn = document.getElementById("paper-btn")
 const scissorsBtn = document.getElementById("scissors-btn")
 const displayResult = document.getElementById("display_result")
-const player1_message = document.getElementById("player1_selection")
-const player2_message = document.getElementById("player2_selection")
+const player1score = document.getElementById("display_score_player1")
+const player2score = document.getElementById("display_score_player2")
+const player1message = document.getElementById("player1_selection")
+const player2message = document.getElementById("player2_selection")
 const storage = window.sessionStorage
     
     document.addEventListener('DOMContentLoaded', () => {
@@ -56,8 +71,8 @@ const storage = window.sessionStorage
             let draw1 = "Rock"
             round.setDraws(draw1)
 
-            player1_message.innerHTML = `You played ${round.draw.player1}`
-            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            player1message.innerHTML = `You played ${round.draw.player1}`
+            player2message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
             setScore()
         })
@@ -67,8 +82,8 @@ const storage = window.sessionStorage
             let draw1 = "Paper"
             round.setDraws(draw1)
 
-            player1_message.innerHTML = `You played ${round.draw.player1}`
-            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            player1message.innerHTML = `You played ${round.draw.player1}`
+            player2message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
             setScore()
         })
@@ -78,8 +93,8 @@ const storage = window.sessionStorage
             let draw1 = "Scissors"
             round.setDraws(draw1)
 
-            player1_message.innerHTML = `You played ${round.draw.player1}`
-            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            player1message.innerHTML = `You played ${round.draw.player1}`
+            player2message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
             setScore()
         })
@@ -93,6 +108,11 @@ const storage = window.sessionStorage
                     window.sessionStorage.setItem(Date.now(), "Tie")
             }
         }
+
+        // showScore = () => {
+        //     storage.getItem()
+        //     displayScore.innerHTML = 
+        // }
     })
 
 </script>
