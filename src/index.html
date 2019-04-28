@@ -49,18 +49,42 @@ const player2_message = document.getElementById("player2_selection")
 const storage = window.sessionStorage
     
     document.addEventListener('DOMContentLoaded', () => {
-        
+        const round = new Round
+
         rockBtn.addEventListener("click", () => {
             event.preventDefault();
-            let round = new Round
             let draw1 = "Rock"
             round.setDraws(draw1)
 
             player1_message.innerHTML = `You played ${round.draw.player1}`
             player2_message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
+            setScore()
+        })
 
-            // Setting score
+        paperBtn.addEventListener("click", () => {
+            event.preventDefault();
+            let draw1 = "Paper"
+            round.setDraws(draw1)
+
+            player1_message.innerHTML = `You played ${round.draw.player1}`
+            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            displayResult.innerHTML = `${round.calculateDraw()}`
+            setScore()
+        })
+
+        scissorsBtn.addEventListener("click", () => {
+            event.preventDefault();
+            let draw1 = "Scissors"
+            round.setDraws(draw1)
+
+            player1_message.innerHTML = `You played ${round.draw.player1}`
+            player2_message.innerHTML = `Computer played ${round.draw.player2}`
+            displayResult.innerHTML = `${round.calculateDraw()}`
+            setScore()
+        })
+
+        setScore = () => {
             if (round.draw.winner == "Player1"){
                     window.sessionStorage.setItem(Date.now(), "Player1")
             } else if (round.draw.winner == "Computer"){
@@ -68,30 +92,7 @@ const storage = window.sessionStorage
             } else if (round.draw.winner == "Tie"){
                     window.sessionStorage.setItem(Date.now(), "Tie")
             }
-        })
-
-        paperBtn.addEventListener("click", () => {
-            event.preventDefault();
-            let round = new Round
-            let draw1 = "Paper"
-            round.setDraws(draw1)
-
-            player1_message.innerHTML = `You played ${round.draw.player1}`
-            player2_message.innerHTML = `Computer played ${round.draw.player2}`
-            displayResult.innerHTML = `${round.calculateDraw()}`
-        })
-
-        scissorsBtn.addEventListener("click", () => {
-            event.preventDefault();
-            let round = new Round
-            let draw1 = "Scissors"
-            round.setDraws(draw1)
-
-            player1_message.innerHTML = `You played ${round.draw.player1}`
-            player2_message.innerHTML = `Computer played ${round.draw.player2}`
-            displayResult.innerHTML = `${round.calculateDraw()}`
-        })
-
+        }
     })
 
 </script>
