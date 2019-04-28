@@ -36,18 +36,16 @@
         </div>
     </div>
 
-    <div class="pt-2">
-        <div class="h-10 p-2 mt-2 mb-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
-            <div id="display_score_player1"></div>
+    <div class ="flex flex-wrap justify-center mt-2">
+        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r border-grey-lighter border-b border-grey-lighter border-t border-grey-lighter self-center text-xl">
+            <div class="text-center" id="player1_name"></div>
+            <div class="text-center font-semibold" id="display_score_player1"></div>
+        </div>
+        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-lighter border-t border-grey-lighter text-xl self-center">
+            <div class="text-center" id="player2_name"></div>
+            <div class="text-center font-semibold" id="display_score_player2"></div>
         </div>
     </div>
-    <div class="pt-2">
-        <div class="h-10 p-2 mt-2 mb-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
-            <div id="display_score_player2"></div>
-        </div>
-    </div>
-
-
 </div> 
 
     
@@ -57,10 +55,13 @@ const rockBtn = document.getElementById("rock-btn")
 const paperBtn = document.getElementById("paper-btn")
 const scissorsBtn = document.getElementById("scissors-btn")
 const displayResult = document.getElementById("display_result")
+const player1name = document.getElementById("player1_name")
+const player2name = document.getElementById("player2_name")
 const player1score = document.getElementById("display_score_player1")
 const player2score = document.getElementById("display_score_player2")
 const player1message = document.getElementById("player1_selection")
 const player2message = document.getElementById("player2_selection")
+
 const storage = window.sessionStorage
     
     document.addEventListener('DOMContentLoaded', () => {
@@ -75,6 +76,7 @@ const storage = window.sessionStorage
             player2message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
             setScore()
+            showScore()
         })
 
         paperBtn.addEventListener("click", () => {
@@ -86,6 +88,7 @@ const storage = window.sessionStorage
             player2message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
             setScore()
+            showScore()
         })
 
         scissorsBtn.addEventListener("click", () => {
@@ -97,22 +100,35 @@ const storage = window.sessionStorage
             player2message.innerHTML = `Computer played ${round.draw.player2}`
             displayResult.innerHTML = `${round.calculateDraw()}`
             setScore()
+            showScore()
         })
 
         setScore = () => {
-            if (round.draw.winner == "Player1"){
-                    window.sessionStorage.setItem(Date.now(), "Player1")
-            } else if (round.draw.winner == "Computer"){
-                    window.sessionStorage.setItem(Date.now(), "Computer")
+            let player1 = round.player1_Name()
+            let player2 = round.player2_Name()
+
+            if (round.draw.winner == player1){
+                    storage.setItem(Date.now(), player1)
+            } else if (round.draw.winner == player2){
+                    storage.setItem(Date.now(), player2)
             } else if (round.draw.winner == "Tie"){
-                    window.sessionStorage.setItem(Date.now(), "Tie")
+                    storage.setItem(Date.now(), "Tie")
             }
         }
 
-        // showScore = () => {
-        //     storage.getItem()
-        //     displayScore.innerHTML = 
-        // }
+        showScore = () => {
+            const score = Object.values(storage);
+            let player1 = round.player1_Name()
+            let player2 = round.player2_Name()
+            
+            player1name.innerHTML =`${player1}`
+            player2name.innerHTML =`${player2}`
+            player1score.innerHTML = `&nbsp;:&nbsp;${score.filter(checkPlayer1Wins).length}`
+            player2score.innerHTML = `&nbsp;:&nbsp;${score.filter(checkPlayer2Wins).length}`
+        }
+
+        checkPlayer1Wins = (string) => {return string == "Player1";}
+        checkPlayer2Wins = (string) => {return string == "Computer";}
     })
 
 </script>
