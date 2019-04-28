@@ -18,32 +18,80 @@ describe("Round", function() {
     })
 
     it("should return correct message after round", () => {
+
+        let player1_msg = "you win!"
+        let player2_msg = "computer wins.."
+        let tie_msg = "It's a tie"
+
         round.draw = {player1: "Rock", player2: "Rock"}
-        expect(round.calculateDraw()).to.equal("It's a tie")
+        expect(round.calculateDraw()).to.equal(tie_msg)
 
         round.draw = {player1: "Paper", player2: "Paper"}
-        expect(round.calculateDraw()).to.equal("It's a tie")
+        expect(round.calculateDraw()).to.equal(tie_msg)
 
         round.draw = {player1: "Scissors", player2: "Scissors"}
-        expect(round.calculateDraw()).to.equal("It's a tie")
+        expect(round.calculateDraw()).to.equal(tie_msg)
 
         round.draw = {player1: "Rock", player2: "Paper"}
-        expect(round.calculateDraw()).to.equal("Paper beats Rock, computer wins..")
+        expect(round.calculateDraw()).to.equal(`Paper beats Rock, ${player2_msg}`)
 
         round.draw = {player1: "Rock", player2: "Scissors"}
-        expect(round.calculateDraw()).to.equal("Rock beats Scissors, you win!")
+        expect(round.calculateDraw()).to.equal(`Rock beats Scissors, ${player1_msg}`)
 
         round.draw = {player1: "Paper", player2: "Scissors"}
-        expect(round.calculateDraw()).to.equal("Scissors beats Paper, computer wins..")
+        expect(round.calculateDraw()).to.equal(`Scissors beats Paper, ${player2_msg}`)
 
         round.draw = {player1: "Paper", player2: "Rock"}
-        expect(round.calculateDraw()).to.equal("Paper beats Rock, you win!")
+        expect(round.calculateDraw()).to.equal(`Paper beats Rock, ${player1_msg}`)
 
         round.draw = {player1: "Scissors", player2: "Rock"}
-        expect(round.calculateDraw()).to.equal("Rock beats Scissors, computer wins..")
+        expect(round.calculateDraw()).to.equal(`Rock beats Scissors, ${player2_msg}`)
 
         round.draw = {player1: "Scissors", player2: "Paper"}
-        expect(round.calculateDraw()).to.equal("Scissors beats Paper, you win!")
+        expect(round.calculateDraw()).to.equal(`Scissors beats Paper, ${player1_msg}`)
+    })
+
+    it("should return correct winner", () => {
+
+        let player1 = "Player1"
+        let player2 = "Computer"
+        let tie = "Tie"
+
+        round.draw = {player1: "Rock", player2: "Rock"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(tie)
+
+        round.draw = {player1: "Paper", player2: "Paper"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(tie)
+
+        round.draw = {player1: "Scissors", player2: "Scissors"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(tie)
+
+        round.draw = {player1: "Rock", player2: "Paper"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(player2)
+
+        round.draw = {player1: "Rock", player2: "Scissors"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(player1)
+
+        round.draw = {player1: "Paper", player2: "Scissors"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(player2)
+
+        round.draw = {player1: "Paper", player2: "Rock"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(player1)
+
+        round.draw = {player1: "Scissors", player2: "Rock"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(player2)
+
+        round.draw = {player1: "Scissors", player2: "Paper"}
+        round.calculateDraw()
+        expect(round.draw.winner).to.equal(player1)
     })
    
 
