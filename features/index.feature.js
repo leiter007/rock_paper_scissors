@@ -18,18 +18,33 @@ describe('User can play a Rock Paper Scissor round', () => {
     expect(await browser.page.title()).to.eql('Rock Paper Scissors');
   });
 
-  // let displayResult = await browser.getContent("div[id='display-result']")
+  it('shows right Draw messages - for Rock', async () => {
   
+    // let displayResult = await browser.getContent("div[id='display_result']")
+    // expect(displayResult).to.be.oneOf(["Computer played Rock","Computer played Paper","Computer played Scissors"])
 
-  it('shows right Draw messages for Rock draw', async () => {
     await browser.clickOnButton("button[id='rock-btn']")
     let player1_message = await browser.getContent("div[id='player1_selection']")
     let player2_message = await browser.getContent("div[id='player2_selection']")
-
     expect(player1_message).to.eql('You played Rock')
     expect(player2_message).to.be.oneOf(["Computer played Rock","Computer played Paper","Computer played Scissors"])
   });
 
+  it('shows right Draw messages - for Paper', async () => {
+    await browser.clickOnButton("button[id='paper-btn']")
+    let player1_message = await browser.getContent("div[id='player1_selection']")
+    let player2_message = await browser.getContent("div[id='player2_selection']")
+    expect(player1_message).to.eql('You played Paper')
+    expect(player2_message).to.be.oneOf(["Computer played Rock","Computer played Paper","Computer played Scissors"])
+  });
+
+  it('shows right Draw messages - for Scissors', async () => {
+    await browser.clickOnButton("button[id='scissors-btn']")
+    let player1_message = await browser.getContent("div[id='player1_selection']")
+    let player2_message = await browser.getContent("div[id='player2_selection']")
+    expect(player1_message).to.eql('You played Scissors')
+    expect(player2_message).to.be.oneOf(["Computer played Rock","Computer played Paper","Computer played Scissors"])
+  });
 
 });
 
