@@ -6,7 +6,11 @@ class Round {
     
     // Change names and win messages if Player 2 is not computer
     player1_Name() {
-        return "Player1"
+        // if (name == ""){
+            return "Player1"
+        // }else {
+        //     return name
+        // }
     }
     player2_Name() {
         return "Computer"

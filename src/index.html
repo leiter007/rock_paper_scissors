@@ -31,9 +31,9 @@
    </div>
 
     <div class="bg-grey-light flex flex-wrap justify-around pb-5 pt-5">
-        <button class="p-2 rounded bg-grey-lightest border border-grey" id="rock-btn">Rock</button>
-        <button class="p-2 rounded bg-grey-lightest border border-grey" id="paper-btn">Paper</button>
-        <button class="p-2 rounded bg-grey-lightest border border-grey" id="scissors-btn">Scissors</button>
+        <button class="p-1 rounded bg-grey-lightest border border-grey" id="rock-btn"> <img src="./img/rock.png" width="120"/></button>
+        <button class="p-1 rounded bg-grey-lightest border border-grey" id="paper-btn"><img src="./img/paper.png" width="120"/></button>
+        <button class="p-1 rounded bg-grey-lightest border border-grey" id="scissors-btn"><img src="./img/scissors.png" width="120"/></button>
       </div>
 
 
@@ -46,8 +46,8 @@
         </div>
     </div>    
 
-        <div class="pt-2">
-            <div class="h-12 p-2 mt-2 mb-2 border-b border-teal-darker border-t border-teal-darker bg-grey-lighter justify-center text-xl font-semibold">
+        <div class="pt-10 flex-wrap">
+            <div class="h-12 p-2 mt-2 mb-2 border-b border-teal-darker border-t border-teal-darker bg-grey-lighter justify-center text-center text-xl font-semibold">
                 <div id="display_result"></div>
             </div>
         </div>
@@ -81,13 +81,13 @@ const disp_player2message = document.getElementById("player2_selection")
 
 //GLOBAL CONSTANTS
 const round = new Round
-const player1Name = round.player1_Name()
+const player1Name = round.player1_Name("Player1")
 const player2Name = round.player2_Name()
 const storage = window.sessionStorage
 
 //GLOBAL FUNCTIONS
 
-    const showScore = () => {
+        const showScore = () => {
             const score = Object.values(storage)
             let scorePlayer1 = score.filter(checkPlayer1Wins).length
             let scorePlayer2 = score.filter(checkPlayer2Wins).length
@@ -118,8 +118,8 @@ const storage = window.sessionStorage
             return string == player1Name}
             
         const checkPlayer2Wins = (string) => {
-            let player2 = round.player2_Name()
             return string == player2Name}
+
     //WHEN RENDERING THE PAGE
     document.addEventListener('DOMContentLoaded', () => {
 
