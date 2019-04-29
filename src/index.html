@@ -16,25 +16,41 @@
 </div>
 
 <div id="player1_space" class="pt-5 w-1/2">
-    <div class="flex flex-wrap justify-around mb-5">
-        <button class="p-2 rounded bg-grey-lighter border border-grey" id="rock-btn">Rock</button>
-        <button class="p-2 rounded bg-grey-lighter border border-grey" id="paper-btn">Paper</button>
-        <button class="p-2 rounded bg-grey-lighter border border-grey" id="scissors-btn">Scissors</button>
-    </div>
+   
+    <div class="pb-5" id="player1_name_space">
+        <label class="block uppercase font-normal text-base text-grey-darker mb-2" for="name">
+        Please write your name
+        </label>
+        <input class="py-2 px-3 appearance-none w-full block bg-grey-lighter text-base text-grey-darker font-hairline border border-grey-lighter rounded leading-tight focus:outline-none focus:bg-white focus:border-grey" name="Name" type="text" value="" id="set_player1_name"></input>
+   </div>
 
-    <div class="h-10 p-2 mt-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
-        <div id="player1_selection"></div>
-    </div>
+   <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
+        <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">
+        MAKE YOUR DRAW!
+        </label>
+   </div>
 
-    <div class="h-10 p-2 mt-2 mb-2 border-b border-grey-lighter border-t border-grey-lighter text-xl">
-        <div id="player2_selection"></div>
-    </div>
+    <div class="bg-grey-light flex flex-wrap justify-around pb-5 pt-5">
+        <button class="p-2 rounded bg-grey-lightest border border-grey" id="rock-btn">Rock</button>
+        <button class="p-2 rounded bg-grey-lightest border border-grey" id="paper-btn">Paper</button>
+        <button class="p-2 rounded bg-grey-lightest border border-grey" id="scissors-btn">Scissors</button>
+      </div>
 
-    <div class="pt-2">
-        <div class="h-12 p-2 mt-2 mb-2 border-b border-teal-darker border-t border-teal-darker bg-grey-lighter justify-center text-xl font-semibold">
-            <div id="display_result"></div>
+
+    <div class ="flex flex-wrap justify-center mt-2">  
+        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r border-grey-lighter border-b border-grey-lighter border-t border-grey-lighter self-center text-xl">
+            <div class="text-center" id="player1_selection"></div>
         </div>
-    </div>
+        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-lighter border-t border-grey-lighter text-xl self-center">
+            <div class="text-center" id="player2_selection"></div>
+        </div>
+    </div>    
+
+        <div class="pt-2">
+            <div class="h-12 p-2 mt-2 mb-2 border-b border-teal-darker border-t border-teal-darker bg-grey-lighter justify-center text-xl font-semibold">
+                <div id="display_result"></div>
+            </div>
+        </div>
 
     <div class ="flex flex-wrap justify-center mt-2">
         <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r border-grey-lighter border-b border-grey-lighter border-t border-grey-lighter self-center text-xl">
@@ -70,6 +86,7 @@ const player2Name = round.player2_Name()
 const storage = window.sessionStorage
 
 //GLOBAL FUNCTIONS
+
     const showScore = () => {
             const score = Object.values(storage)
             let scorePlayer1 = score.filter(checkPlayer1Wins).length
