@@ -36,8 +36,8 @@ class Round {
 
     // Change here if Player 2 is not computer
     player2_Draw() {
-        let options = ["Rock", "Paper", "Scissors"]
-        let random = options[Math.floor(Math.random()*3)]
+        let options = ["Rock", "Paper", "Scissors","Rock", "Paper", "Scissors"]
+        let random = options[Math.floor(Math.random()*6)]
         return random
     }
 
