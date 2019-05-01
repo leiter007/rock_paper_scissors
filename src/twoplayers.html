@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <script src="js/round.js"></script>
-    <script src="./node_modules/sinon/pkg/sinon.js"></script>
+    <script src="js/round_2P.js"></script>
     <title>Rock Paper Scissors</title>
 </head>
 
@@ -44,7 +43,7 @@
 
 <div class="p-3 pt-0 flex"> 
 <!--PLAYER 1 FIELD-->
-    <div class="pr-1 pt-1 w-1/2 justify-center border-r-4 border-grey">
+    <div id="player1_space" class="pr-1 pt-1 w-1/2 justify-center border-r-4 border-grey">
         <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
             <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">
             PLAYER 1 - MAKE YOUR DRAW!
@@ -59,7 +58,7 @@
     </div>
 <!--PLAYER 1 FIELD END -->
 <!--PLAYER 2 FIELD-->
-<div class="pr-1 pt-1 w-1/2 justify-center">
+<div id="player2_space" class="pr-1 pt-1 w-1/2 justify-center">
     <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
         <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">
         PLAYER 2 - MAKE YOUR DRAW!
@@ -109,6 +108,8 @@
 
 //HTML ELEMENTS
 const newGameBtn = document.getElementById("new_one_vs_one_game")
+// const player1Space = document.getElementById("player1_space")
+// const player2Space = document.getElementById("player2_space")
 const rockBtn = document.getElementById("rock-btn")
 const paperBtn = document.getElementById("paper-btn")
 const scissorsBtn = document.getElementById("scissors-btn")
@@ -121,12 +122,16 @@ const disp_player1message = document.getElementById("player1_selection")
 const disp_player2message = document.getElementById("player2_selection")
 
 //GLOBAL CONSTANTS
-const round = new Round
+const round = new Round_2P
 const player1Name = round.player1_Name()
 const player2Name = round.player2_Name()
 const storage = window.sessionStorage
 
 //GLOBAL FUNCTIONS
+
+        // const hidePlayer1 = () => {
+
+        // }
         const clearStorage = () => {
             storage.clear()
             window.location.reload(true)

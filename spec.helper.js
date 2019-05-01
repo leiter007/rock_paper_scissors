@@ -4,5 +4,6 @@ global.browser = new BrowserHelpers()
 global.expect = chai.expect;
 const fs = require('fs');
 
-let calc = fs.readFileSync('./src/js/round.js');
-eval(calc + `\nexports.Round = Round;`)
+let round = fs.readFileSync('./src/js/round.js');
+let round2 = fs.readFileSync('./src/js/round_2P.js');
+eval(round + round2 + `\nexports.Round = Round;\nexports.Round = Round_2P;`)
