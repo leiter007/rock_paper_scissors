@@ -3,7 +3,6 @@ class Round_2P {
         this.draw = {}
     }
     
-    // Change names and win messages if Player 2 is not computer
     player1_Name() {
        return "Player 1"
     }
@@ -19,20 +18,17 @@ class Round_2P {
         return `${player2} wins!`
     }
 
-    setDraws (draw1) {
+    setDraws (draw1, draw2) {
         this.draw.player1 = this.player1_Draw(draw1)
-        this.draw.player2 = this.player2_Draw()
+        this.draw.player2 = this.player2_Draw(draw2)
     }
 
     player1_Draw(draw1) {
         return(draw1)
     }   
 
-    // Change here if Player 2 is not computer
-    player2_Draw() {
-        let options = ["Rock", "Paper", "Scissors","Rock", "Paper", "Scissors"]
-        let random = options[Math.floor(Math.random()*6)]
-        return random
+    player2_Draw(draw2) {
+       return(draw2)
     }
 
     calculateDraw() {

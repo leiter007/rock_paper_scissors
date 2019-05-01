@@ -108,11 +108,14 @@
 
 //HTML ELEMENTS
 const newGameBtn = document.getElementById("new_one_vs_one_game")
-// const player1Space = document.getElementById("player1_space")
-// const player2Space = document.getElementById("player2_space")
+const player1Space = document.getElementById("player1_space")
+const player2Space = document.getElementById("player2_space")
 const rockBtn = document.getElementById("rock-btn")
 const paperBtn = document.getElementById("paper-btn")
 const scissorsBtn = document.getElementById("scissors-btn")
+const rockBtn_2 = document.getElementById("rock-btn-2")
+const paperBtn_2 = document.getElementById("paper-btn-2")
+const scissorsBtn_2 = document.getElementById("scissors-btn-2")
 const disp_result = document.getElementById("display_result")
 const disp_player1name = document.getElementById("player1_name")
 const disp_player2name = document.getElementById("player2_name")
@@ -126,15 +129,25 @@ const round = new Round_2P
 const player1Name = round.player1_Name()
 const player2Name = round.player2_Name()
 const storage = window.sessionStorage
+const roundArray = []
 
 //GLOBAL FUNCTIONS
 
-        // const hidePlayer1 = () => {
+        const hidePlayer1 = () => {
+            player1Space.style.visibility = "hidden"
+        }
+        const hidePlayer2 = () => {
+            player2Space.style.visibility = "hidden"
+        }
+        const showPlayer1 = () => {
+            player1Space.style.visibility = "visible"
+        }
+        const showPlayer2 = () => {
+            player2Space.style.visibility = "visible"
+        }
 
-        // }
         const clearStorage = () => {
             storage.clear()
-            window.location.reload(true)
         }
 
         const showScore = () => {
@@ -185,18 +198,33 @@ const storage = window.sessionStorage
 
     //WHEN RENDERING THE PAGE
     document.addEventListener('DOMContentLoaded', () => {
-
+        clearStorage()
+        hidePlayer2()
+        
         rockBtn.addEventListener("click", () => {
             event.preventDefault();
-            let draw1 = "Rock"
-            round.setDraws(draw1)
+            roundArray.push("Rock")
+            disp_player1message.innerHTML = `${player1Name} made draw, now time for Player 2!`
+            disp_result.innerHTML ="Wait for it..."
+            hidePlayer1()
+            showPlayer2()
+        })
+
+        paperBtn_2.addEventListener("click", () => {
+            event.preventDefault();
+            let draw2 = "Paper"
+            let draw1 = roundArray[0]
+            round.setDraws(draw1, draw2)
 
             disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
             disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
             disp_result.innerHTML = `${round.calculateDraw()}`
             setScore()
             showScore()
+            showPlayer1()
+            hidePlayer2()
         })
+
 
         paperBtn.addEventListener("click", () => {
             event.preventDefault();
@@ -221,12 +249,15 @@ const storage = window.sessionStorage
             setScore()
             showScore()
         })
+    })
 
         newGameBtn.addEventListener("click", () => {
             event.preventDefault();
             clearStorage()
+            hidePlayer2()
+            document.location.reload()
         })
-    })
+    
 
 </script>
 
