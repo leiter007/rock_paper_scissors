@@ -1,4 +1,5 @@
 require('../spec.helper');
+ var sinon = require('sinon')
 
 describe('User can play a Rock Paper Scissor round', () => {
     before(async () => {

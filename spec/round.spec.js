@@ -1,4 +1,5 @@
 const { Round } = require('../spec.helper')
+var sinon = require('sinon')
 
 describe("Round", function() {
     
@@ -15,6 +16,11 @@ describe("Round", function() {
 
     it("Player2 returns one of Rock, Paper or Scissors", () => {
         expect(round.player2_Draw()).to.be.oneOf(["Rock","Paper","Scissors"])
+    })
+
+    it("Computer randomizer function returns correct value", () => {
+        sinon.stub(Math, 'floor').returns(3) // Means Computer function will generate Rock
+        expect(round.player2_Draw()).to.equal("Rock")
     })
 
     it("should return correct message after round", () => {
@@ -93,6 +99,5 @@ describe("Round", function() {
         round.calculateDraw()
         expect(round.draw.winner).to.equal(player1)
     })
-   
 
 })
