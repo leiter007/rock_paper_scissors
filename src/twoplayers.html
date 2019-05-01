@@ -204,8 +204,35 @@ const roundArray = []
         rockBtn.addEventListener("click", () => {
             event.preventDefault();
             roundArray.push("Rock")
-            disp_player1message.innerHTML = `${player1Name} made draw, now time for Player 2!`
-            disp_result.innerHTML ="Wait for it..."
+            disp_player1message.innerHTML = `${player1Name} made draw!`
+            disp_player2message.innerHTML = "";
+            disp_result.innerHTML ="Waiting on Player 2..."
+            hidePlayer1()
+            showPlayer2()
+        })
+
+        rockBtn_2.addEventListener("click", () => {
+            event.preventDefault();
+            let draw2 = "Rock"
+            let draw1 = roundArray[0]
+            round.setDraws(draw1, draw2)
+
+            disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
+            disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
+            disp_result.innerHTML = `${round.calculateDraw()}`
+            setScore()
+            showScore()
+            roundArray.splice(0, 1)
+            showPlayer1()
+            hidePlayer2()
+        })
+
+        paperBtn.addEventListener("click", () => {
+            event.preventDefault();
+            roundArray.push("Paper")
+            disp_player1message.innerHTML = `${player1Name} made draw!`
+            disp_player2message.innerHTML = "";
+            disp_result.innerHTML ="Waiting on Player 2..."
             hidePlayer1()
             showPlayer2()
         })
@@ -221,39 +248,42 @@ const roundArray = []
             disp_result.innerHTML = `${round.calculateDraw()}`
             setScore()
             showScore()
+            roundArray.splice(0, 1)
             showPlayer1()
             hidePlayer2()
         })
 
-
-        paperBtn.addEventListener("click", () => {
-            event.preventDefault();
-            let draw1 = "Paper"
-            round.setDraws(draw1)
-
-            disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
-            disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
-            disp_result.innerHTML = `${round.calculateDraw()}`
-            setScore()
-            showScore()
-        })
-
         scissorsBtn.addEventListener("click", () => {
             event.preventDefault();
-            let draw1 = "Scissors"
-            round.setDraws(draw1)
+            roundArray.push("Scissors")
+            disp_player1message.innerHTML = `${player1Name} made draw!`
+            disp_player2message.innerHTML = "";
+            disp_result.innerHTML ="Waiting on Player 2..."
+            hidePlayer1()
+            showPlayer2()
+        })
+
+        scissorsBtn_2.addEventListener("click", () => {
+            event.preventDefault();
+            let draw2 = "Scissors"
+            let draw1 = roundArray[0]
+            round.setDraws(draw1, draw2)
 
             disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
             disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
             disp_result.innerHTML = `${round.calculateDraw()}`
             setScore()
             showScore()
+            roundArray.splice(0, 1)
+            showPlayer1()
+            hidePlayer2()
         })
-    })
 
+    })
         newGameBtn.addEventListener("click", () => {
             event.preventDefault();
             clearStorage()
+            roundArray.splice(0, 1)
             hidePlayer2()
             document.location.reload()
         })
