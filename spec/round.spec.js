@@ -19,8 +19,8 @@ describe("Round", function() {
 
     it("should return correct message after round", () => {
 
-        let player1_msg = "you win!"
-        let player2_msg = "computer wins.."
+        let player1_msg = "You win!"
+        let player2_msg = "Computer wins.."
         let tie_msg = "It's a tie"
 
         round.draw = {player1: "Rock", player2: "Rock"}
@@ -53,7 +53,7 @@ describe("Round", function() {
 
     it("should return correct winner", () => {
 
-        let player1 = "Player1"
+        let player1 = "You"
         let player2 = "Computer"
         let tie = "Tie"
 

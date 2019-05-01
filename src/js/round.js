@@ -6,24 +6,19 @@ class Round {
     
     // Change names and win messages if Player 2 is not computer
     player1_Name() {
-        // if (name == ""){
-            return "Player1"
-        // }else {
-        //     return name
-        // }
+       return "You"
     }
     player2_Name() {
         return "Computer"
     }
     player1_WinMsg() {
         let player1 = this.player1_Name()
-        return `${player1} wins!`
+        return `${player1} win!`
     }
     player2_WinMsg() {
         let player2 = this.player2_Name()
-        return `${player2} wins!`
+        return `${player2} wins..`
     }
-
 
     setDraws (draw1) {
         this.draw.player1 = this.player1_Draw(draw1)
