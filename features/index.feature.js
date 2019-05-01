@@ -1,5 +1,4 @@
 require('../spec.helper');
- var sinon = require('sinon')
 
 describe('User can play a Rock Paper Scissor round', () => {
     before(async () => {
@@ -19,6 +18,12 @@ describe('User can play a Rock Paper Scissor round', () => {
     expect(await browser.page.title()).to.eql('Rock Paper Scissors');
   });
 
+  it('renders game vs Computer', async () => {
+    await browser.clickOnButton("button[id='new_comp_game']")
+    let newGame = await browser.getContent("div[id='game_selection']")
+    expect(newGame).to.eql('GAME VS COMPUTER');
+  });
+  
   let player1Name = "You"
 
   it('shows right Draw messages - for Rock', async () => {
@@ -45,8 +50,6 @@ describe('User can play a Rock Paper Scissor round', () => {
     expect(player2_message).to.be.oneOf(["Computer played Rock","Computer played Paper","Computer played Scissors"])
   });
 
-
-  
   // it('saves winner session for all action buttons', async () => {
 
   //   await browser.clickOnButton("button[id='rock-btn']")
