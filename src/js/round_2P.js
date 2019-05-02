@@ -9,10 +9,12 @@ class Round_2P {
     player2_Name() {
         return "Player 2"
     }
+
     player1_WinMsg() {
         let player1 = this.player1_Name()
         return `${player1} wins!`
     }
+    
     player2_WinMsg() {
         let player2 = this.player2_Name()
         return `${player2} wins!`

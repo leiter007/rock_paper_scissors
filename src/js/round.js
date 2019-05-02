@@ -4,17 +4,19 @@ class Round {
         this.draw = {}
     }
     
-    // Change names and win messages if Player 2 is not computer
     player1_Name() {
        return "You"
     }
+
     player2_Name() {
         return "Computer"
     }
+
     player1_WinMsg() {
         let player1 = this.player1_Name()
         return `${player1} win!`
     }
+
     player2_WinMsg() {
         let player2 = this.player2_Name()
         return `${player2} wins..`
@@ -27,9 +29,8 @@ class Round {
 
     player1_Draw(draw1) {
         return(draw1)
-    }   
+    }
 
-    // Change here if Player 2 is not computer
     player2_Draw() {
         let options = ["Rock", "Paper", "Scissors","Rock", "Paper", "Scissors"]
         let random = options[Math.floor(Math.random()*6)]
