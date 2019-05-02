@@ -26,7 +26,7 @@
     <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_one_vs_one_game">New Game - One-on-One</button>
   </div>
 </header>
-
+<!--INSTRUCTIONS-->
 <div class="bg-grey-light text-grey-darker pt-3 pb-3 border-b-2 border-grey-light text-base">
   <div class="text-center">
     <a class="font-hairline">Here you can play a super exciting game of the classic</a>
@@ -36,13 +36,14 @@
     </p>
   </div>
 </div>
-'
+<!--/INSTRUCTIONS-->
+<!--GAME HEADLINE-->
 <div class="text-2xl text-center pb-1 border-b border-grey-light w-full">
   <p id="game_selection">PLAYER 1 VS PLAYER 2</p>
 </div>
-
+<!--/GAME HEADLINE-->
 <div class="p-3 pt-0 flex"> 
-<!--PLAYER 1 FIELD-->
+<!--PLAYER 1 SPACE-->
   <div id="player1_space" class="pr-1 pt-1 w-1/2 justify-center border-r-4 border-grey">
     <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
       <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">PLAYER 1 - MAKE YOUR DRAW!</label>
@@ -62,9 +63,8 @@
       </button>
     </div>
   </div>
-<!--/PLAYER 1 FIELD END -->
-
-<!--PLAYER 2 FIELD-->
+<!--/PLAYER 1 SPACE END -->
+<!--PLAYER 2 SPACE-->
 <div id="player2_space" class="pr-1 pt-1 w-1/2 justify-center">
   <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
     <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">PLAYER 2 - MAKE YOUR DRAW!</label>
@@ -85,9 +85,9 @@
     </div>
   </div>
 </div>
-<!-- /PLAYER 2 FIELD END -->
-
-<div class ="flex flex-wrap justify-center mt-2">  
+<!-- /PLAYER 2 SPACE END -->
+<div class ="flex flex-wrap justify-center mt-2">
+  <!--DRAW MESSAGES-->
   <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-grey-light border-b border-grey-light border-t border-grey-light self-center text-xl">
     <div class="text-center" id="player1_selection"></div>
   </div>
@@ -100,6 +100,8 @@
       <div id="display_result"></div>
     </div>
   </div>
+  <!--/DRAW MESSAGES-->
+    <!--RESULT MESSAGE AND SCOREBOARD-->
     <div id="score_board"class="pt-5 text-center">
       <p>CURRENT SCORE:</p>
     </div>   
@@ -112,8 +114,10 @@
         <div class="text-center" id="player2_name"></div>
         <div class="text-center font-semibold" id="display_score_player2"></div>
       </div>
+      <!--/RESULT MESSAGE AND SCOREBOARD-->
   </div>
 </div>
+
 
     
 <script type="text/javascript">
