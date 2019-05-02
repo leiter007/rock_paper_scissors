@@ -57,6 +57,7 @@ describe('User can play a Rock Paper Scissor game - vs computer', () => {
   });
 });
 
+
 describe('User can play a Rock Paper Scissor game - one-on-one', () => {
     before(async () => {
       await browser.init()
@@ -74,6 +75,7 @@ describe('User can play a Rock Paper Scissor game - one-on-one', () => {
 
     let player1Name = "Player 1"
     let player2Name = "Player 2"
+		let tie_msg = "It's a tie"
 
   it('shows right Draw and result messages - for Player 1 playing rock', async () => {
     await browser.clickOnButton("button[id='rock-btn']")
@@ -84,7 +86,19 @@ describe('User can play a Rock Paper Scissor game - one-on-one', () => {
     expect(player2_message).to.eql("")
     expect(disp_result).to.eql(`Waiting on ${player2Name}...`)
   });
+
+  it('shows right Draw and result messages - when Player 2 plays rock', async () => {
+    await browser.clickOnButton("button[id='rock-btn']")
+    await browser.clickOnButton("button[id='rock-btn-2']")
+    let player1_message = await browser.getContent("div[id='player1_selection']")
+    let player2_message = await browser.getContent("div[id='player2_selection']")
+    let disp_result = await browser.getContent("div[id='display_result']")
+    expect(player1_message).to.eql(`${player1Name} played Rock`)
+    expect(player2_message).to.eql(`${player2Name} played Rock`)
+    expect(disp_result).to.eql(tie_msg)
+  });
   
+  // Testa att player 2 space är hidden, och vice versa
 
   // it('shows right Draw messages - for Paper', async () => {
   // 	await browser.clickOnButton("button[id='paper-btn']")
