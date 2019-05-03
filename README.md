@@ -111,9 +111,8 @@ Both feature and unit tests:
 npm test
 ```
 
-
-## Deployed site
-Check out the deployed site [here]().
+## Deployed with [Netlify](https://www.netlify.com/)
+Check out the deployed site [here](https://leiter007-rock-paper-scissors.netlify.com/).
 
 ## Built with
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
