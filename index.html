@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <script src="js/round_2P.js"></script>
+    <script src="src/js/round.js"></script>
     <title>Rock Paper Scissors</title>
 </head>
 
@@ -13,17 +13,17 @@
 
 <header class ="p-2 bg-teal-darkest w-full justify-around text-grey-lightest bold border-b border-grey-dark flex">
   <div class="md:w-1/3 flex justify-center">
-    <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_comp_game">
-      <a href="index.html" class="text-grey-lightest no-underline">New Game - vs Computer</a>
-    </button>
+    <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_comp_game">New Game - vs Computer</button>
   </div>
   <div class="md:w-1/3 flex justify-center">
     <div class="bg-teal-darkest text-grey-lightest text-center p-2 text-4xl">
-      WELCOME!
-      </div>
+    WELCOME!
     </div>
+  </div>
   <div class="md:w-1/3 flex justify-center">
-    <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_one_vs_one_game">New Game - One-on-One</button>
+    <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_one_vs_one_game">
+      <a href="twoplayers.html" class="text-grey-lightest no-underline">New Game - One-on-One</a>
+    </button>
   </div>
 </header>
 <!--INSTRUCTIONS-->
@@ -40,71 +40,49 @@
   </div>
 </div>
 <!--/INSTRUCTIONS-->
-<!--GAME HEADLINE-->
-<div class="text-2xl text-center pb-1 mb-2 pt-6 border-b border-grey-light w-full">
-  <p id="game_selection">PLAYER 1 VS PLAYER 2</p>
-</div>
-<!--/GAME HEADLINE-->
-<div class="p-3 pt-0 flex"> 
-<!--PLAYER 1 SPACE-->
-  <div id="player1_space" class="pr-1 pt-1 w-1/2 justify-center border-r-4 border-grey">
-    <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
-      <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">PLAYER 1 - MAKE YOUR DRAW!</label>
+<div class="p-3 pt-4 flex justify-center">
+  <div class="pr-1 pt-2 w-2/3 justify-center">
+    <!--GAME HEADLINE-->
+    <div class="text-2xl text-center pb-1 mb-2 border-b border-grey-light">
+      <p id="game_selection">GAME VS COMPUTER</p>
     </div>
-    <div class="bg-grey-light flex justify-around p-3 pl-8 pr-8">
+    <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
+      <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">MAKE YOUR DRAW!</label>
+  </div>
+    <!--/GAME HEADLINE-->
+    <!--BUTTONS-->
+    <div class="bg-grey-light flex justify-around pb-3 pt-3">
       <button class="p-1 rounded bg-grey-lightest border border-grey" id="rock-btn">
-        <p class="pb-1 text-base font-medium text-grey-darker">ROCK!</p> 
-        <img src="./img/rock.png" width="120"/>
+        <p class="pb-1 text-base font-medium text-grey-darker">ROCK!</p>
+        <img src="src/img/rock.png" width="120"/>
       </button>
       <button class="p-1 rounded bg-grey-lightest border border-grey" id="paper-btn">
-        <p class="pb-1 text-base font-medium text-grey-darker">PAPER!</p> 
-        <img src="./img/paper.png" width="120"/>
+        <p class="pb-1 text-base font-medium text-grey-darker">PAPER!</p>
+        <img src="src/img/paper.png" width="120"/>
       </button>
       <button class="p-1 rounded bg-grey-lightest border border-grey" id="scissors-btn">
-        <p class="pb-1 text-base font-medium text-grey-darker">SCISSORS!</p> 
-        <img src="./img/scissors.png" width="120"/>
-      </button>
-    </div>
-  </div>
-<!--/PLAYER 1 SPACE END -->
-<!--PLAYER 2 SPACE-->
-<div id="player2_space" class="pr-1 pt-1 w-1/2 justify-center">
-  <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
-    <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">PLAYER 2 - MAKE YOUR DRAW!</label>
-  </div>
-    <div class="bg-grey-light flex justify-around p-3 pl-8 pr-8">
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="rock-btn-2">
-        <p class="pb-1 text-base font-medium text-grey-darker">ROCK!</p>
-        <img src="./img/rock.png" width="120"/>
-      </button>
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="paper-btn-2">
-        <p class="pb-1 text-base font-medium text-grey-darker">PAPER!</p>
-        <img src="./img/paper.png" width="120"/>
-      </button>
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="scissors-btn-2">
         <p class="pb-1 text-base font-medium text-grey-darker">SCISSORS!</p>
-        <img src="./img/scissors.png" width="120"/>
+        <img src="src/img/scissors.png" width="120"/>
       </button>
     </div>
-  </div>
-</div>
-<!-- /PLAYER 2 SPACE END -->
-<div class ="flex flex-wrap justify-center mt-2">
-  <!--DRAW MESSAGES-->
-  <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-grey-light border-b border-grey-light border-t border-grey-light self-center text-xl">
-    <div class="text-center" id="player1_selection"></div>
-  </div>
-    <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-light border-t border-grey-light text-xl self-center">
-      <div class="text-center" id="player2_selection"></div>
-    </div>
-  </div>
-  <div class="flex-wrap">
-    <div class="h-12 p-2 mt-2 mb-2 border-b-2 border-teal-darker border-t-2 border-teal-darker bg-grey-lighter justify-center text-center text-xl font-semibold">
-      <div id="display_result"></div>
-    </div>
-  </div>
-  <!--/DRAW MESSAGES-->
+    <!--/BUTTONS-->
+    <!--DRAW MESSAGES-->
+    <div class ="flex flex-wrap justify-center mt-2">  
+      <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-grey-light border-b border-grey-light border-t border-grey-light self-center text-xl">
+        <div class="text-center" id="player1_selection"></div>
+      </div>
+      <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-light border-t border-grey-light text-xl self-center">
+        <div class="text-center" id="player2_selection"></div>
+      </div>
+    </div>    
+    <!--/DRAW MESSAGES-->
     <!--RESULT MESSAGE AND SCOREBOARD-->
+      <div class="flex-wrap">
+        <div class="h-12 p-2 mt-2 mb-2 border-b-2 border-teal-darker border-t-2 border-teal-darker bg-grey-lighter justify-center text-center text-xl font-semibold">
+          <div id="display_result">
+          </div>
+        </div>
+      </div>
     <div id="score_board"class="pt-5 text-center">
       <p>CURRENT SCORE:</p>
     </div>   
@@ -113,28 +91,22 @@
           <div class="text-center" id="player1_name"></div>
           <div class="text-center font-semibold" id="display_score_player1"></div>
         </div>
-      <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-light border-t border-grey-light text-xl self-center">
-        <div class="text-center" id="player2_name"></div>
-        <div class="text-center font-semibold" id="display_score_player2"></div>
+        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-light border-t border-grey-light text-xl self-center">
+          <div class="text-center" id="player2_name"></div>
+          <div class="text-center font-semibold" id="display_score_player2"></div>
+        </div>
       </div>
       <!--/RESULT MESSAGE AND SCOREBOARD-->
-  </div>
+    </div>
 </div>
-
-
     
 <script type="text/javascript">
 
   //HTML ELEMENTS
-  const newGameBtn = document.getElementById("new_one_vs_one_game")
-  const player1Space = document.getElementById("player1_space")
-  const player2Space = document.getElementById("player2_space")
+  const newGameBtn = document.getElementById("new_comp_game")
   const rockBtn = document.getElementById("rock-btn")
   const paperBtn = document.getElementById("paper-btn")
   const scissorsBtn = document.getElementById("scissors-btn")
-  const rockBtn_2 = document.getElementById("rock-btn-2")
-  const paperBtn_2 = document.getElementById("paper-btn-2")
-  const scissorsBtn_2 = document.getElementById("scissors-btn-2")
   const disp_result = document.getElementById("display_result")
   const disp_player1name = document.getElementById("player1_name")
   const disp_player2name = document.getElementById("player2_name")
@@ -144,43 +116,27 @@
   const disp_player2message = document.getElementById("player2_selection")
 
   //GLOBAL CONSTANTS
-  const round = new Round_2P
+  const round = new Round
   const player1Name = round.player1_Name()
   const player2Name = round.player2_Name()
   const storage = window.sessionStorage
-  const roundArray = []
 
   //GLOBAL FUNCTIONS
-  const hidePlayer1 = () => {
-    player1Space.style.visibility = "hidden"
-  }
-
-  const hidePlayer2 = () => {
-    player2Space.style.visibility = "hidden"
-  }
-
-  const showPlayer1 = () => {
-    player1Space.style.visibility = "visible"
-  }
-
-  const showPlayer2 = () => {
-    player2Space.style.visibility = "visible"
-  }
-
   const clearStorage = () => {
     storage.clear()
+    window.location.reload(true)
   }
 
   const showScore = () => {
     const score = Object.values(storage)
     let scorePlayer1 = score.filter(checkPlayer1Wins).length
     let scorePlayer2 = score.filter(checkPlayer2Wins).length
-    
+      
     disp_player1name.innerHTML =`${player1Name}`
     disp_player2name.innerHTML =`${player2Name}`
     disp_player1score.innerHTML = `&nbsp;:&nbsp;${scorePlayer1}`
     disp_player2score.innerHTML = `&nbsp;:&nbsp;${scorePlayer2}`
-    
+      
     if (scorePlayer1 > scorePlayer2) {
         disp_player1score.classList = "text-green-dark font-semibold"
         disp_player2score.classList = "text-red-dark font-semibold"
@@ -202,7 +158,7 @@
 
   const checkPlayer1Wins = (string) => {return string == player1Name}
   const checkPlayer2Wins = (string) => {return string == player2Name}
-  
+
   const setScore = () => {
     if (round.draw.winner == player1Name){
         storage.setItem(Date.now(), player1Name)
@@ -213,98 +169,51 @@
     }
   }
 
-  newGameBtn.addEventListener("click", () => {
-    event.preventDefault();
-    clearStorage()
-    roundArray.splice(0, 1)
-    hidePlayer2()
-    document.location.reload()
-  })
-
   //WHEN RENDERING THE PAGE
   document.addEventListener('DOMContentLoaded', () => {
-    clearStorage()
-    hidePlayer2()
-    
+
   rockBtn.addEventListener("click", () => {
     event.preventDefault();
-    roundArray.push("Rock")
-    disp_player1message.innerHTML = `${player1Name} made draw!`
-    disp_player2message.innerHTML = "";
-    disp_result.innerHTML ="Waiting on Player 2..."
-    hidePlayer1()
-    showPlayer2()
-  })
-
-  rockBtn_2.addEventListener("click", () => {
-    event.preventDefault();
-    let draw2 = "Rock"
-    let draw1 = roundArray[0]
-    round.setDraws(draw1, draw2)
+    let draw1 = "Rock"
+    round.setDraws(draw1)
 
     disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
     disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
     disp_result.innerHTML = `${round.calculateDraw()}`
     setScore()
     showScore()
-    roundArray.splice(0, 1)
-    showPlayer1()
-    hidePlayer2()
   })
 
   paperBtn.addEventListener("click", () => {
     event.preventDefault();
-    roundArray.push("Paper")
-    disp_player1message.innerHTML = `${player1Name} made draw!`
-    disp_player2message.innerHTML = "";
-    disp_result.innerHTML ="Waiting on Player 2..."
-    hidePlayer1()
-    showPlayer2()
-  })
-
-  paperBtn_2.addEventListener("click", () => {
-    event.preventDefault();
-    let draw2 = "Paper"
-    let draw1 = roundArray[0]
-    round.setDraws(draw1, draw2)
+    let draw1 = "Paper"
+    round.setDraws(draw1)
 
     disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
     disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
     disp_result.innerHTML = `${round.calculateDraw()}`
     setScore()
     showScore()
-    roundArray.splice(0, 1)
-    showPlayer1()
-    hidePlayer2()
   })
 
   scissorsBtn.addEventListener("click", () => {
     event.preventDefault();
-    roundArray.push("Scissors")
-    disp_player1message.innerHTML = `${player1Name} made draw!`
-    disp_player2message.innerHTML = "";
-    disp_result.innerHTML ="Waiting on Player 2..."
-    hidePlayer1()
-    showPlayer2()
-  })
-
-  scissorsBtn_2.addEventListener("click", () => {
-    event.preventDefault();
-    let draw2 = "Scissors"
-    let draw1 = roundArray[0]
-    round.setDraws(draw1, draw2)
+    let draw1 = "Scissors"
+    round.setDraws(draw1)
 
     disp_player1message.innerHTML = `${player1Name} played ${round.draw.player1}`
     disp_player2message.innerHTML = `${player2Name} played ${round.draw.player2}`
     disp_result.innerHTML = `${round.calculateDraw()}`
     setScore()
     showScore()
-    roundArray.splice(0, 1)
-    showPlayer1()
-    hidePlayer2()
+  })
+
+  newGameBtn.addEventListener("click", () => {
+    event.preventDefault();
+    clearStorage()
   })
 })
-  
+
 </script>
 
 </body>
