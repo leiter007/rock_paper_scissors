@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="src/js/round_2P.js"></script>
     <title>Rock Paper Scissors</title>
 </head>
 
-<body class="text-grey-darker text-xl font-sans font-hairline">
+<body class="text-gray-700 text-xl font-sans font-hairline">
 
-<header class ="p-2 bg-teal-darkest w-full justify-around text-grey-lightest bold border-b border-grey-dark flex">
+<header class ="p-2 bg-teal-900 w-full justify-around text-gray-100 bold border-b border-gray-600 flex">
   <div class="md:w-1/3 flex justify-center">
-    <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_comp_game">
-      <a href="index.html" class="text-grey-lightest no-underline">New Game - vs Computer</a>
+    <button class="font-hairline bg-teal-800 text-gray-100 hover:bg-green-900 py-2 px-4 self-center rounded" id="new_comp_game">
+      <a href="index.html" class="text-gray-100 no-underline">New Game - vs Computer</a>
     </button>
   </div>
   <div class="md:w-1/3 flex justify-center">
-    <div class="bg-teal-darkest text-grey-lightest text-center p-2 text-4xl">
+    <div class="bg-teal-900 text-gray-100 text-center p-2 text-3xl">
       WELCOME!
       </div>
     </div>
   <div class="md:w-1/3 flex justify-center">
-    <button class="font-hairline bg-teal-darker text-grey-lightest hover:bg-green-darkest py-2 px-4 self-center rounded" id="new_one_vs_one_game">New Game - One-on-One</button>
+    <button class="font-hairline bg-teal-800 text-gray-100 hover:bg-green-900 py-2 px-4 self-center rounded" id="new_one_vs_one_game">New Game - One-on-One</button>
   </div>
 </header>
 <!--INSTRUCTIONS-->
-<div class="bg-grey-light text-grey-darker pt-3 pb-3 border-b-2 border-grey-light text-base">
+<div class="bg-gray-400 text-gray-700 pt-1 pb-1 border-b-2 border-gray-400 text-xs">
   <div class="text-center">
     <a class="font-hairline">Here you can play a super exciting game of the classic</a>
     <a class="font-semibold text-xl">ROCK PAPER SCISSORS!</a>
@@ -41,27 +41,27 @@
 </div>
 <!--/INSTRUCTIONS-->
 <!--GAME HEADLINE-->
-<div class="text-2xl text-center pb-1 mb-2 pt-6 border-b border-grey-light w-full">
+<div class="text-2xl text-center pb-1 mb-2 pt-6 border-b border-gray-400 w-full">
   <p id="game_selection">PLAYER 1 VS PLAYER 2</p>
 </div>
 <!--/GAME HEADLINE-->
-<div class="p-3 pt-0 flex"> 
+<div class="p-3 pt-0 pb-0 flex"> 
 <!--PLAYER 1 SPACE-->
-  <div id="player1_space" class="pr-1 pt-1 w-1/2 justify-center border-r-4 border-grey">
-    <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
-      <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">PLAYER 1 - MAKE YOUR DRAW!</label>
+  <div id="player1_space" class="pr-1 pt-1 w-1/2 justify-center border-r-4 border-gray">
+    <div class="pt-2 pb-2 justify-center bg-gray-200 border-b border-gray">
+      <label class="text-xl text-center block uppercase font-medium text-base text-gray-700" for="name">PLAYER 1 - MAKE YOUR DRAW!</label>
     </div>
-    <div class="bg-grey-light flex justify-around p-3 pl-8 pr-8">
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="rock-btn">
-        <p class="pb-1 text-base font-medium text-grey-darker">ROCK!</p> 
+    <div class="bg-gray-400 flex justify-around p-3 pl-8 pr-8">
+      <button class="p-1 rounded bg-gray-100 border border-gray" id="rock-btn">
+        <p class="pb-1 text-base font-medium text-gray-700">ROCK!</p> 
         <img src="src/img/rock.png" width="120"/>
       </button>
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="paper-btn">
-        <p class="pb-1 text-base font-medium text-grey-darker">PAPER!</p> 
+      <button class="p-1 rounded bg-gray-100 border border-gray" id="paper-btn">
+        <p class="pb-1 text-base font-medium text-gray-700">PAPER!</p> 
         <img src="src/img/paper.png" width="120"/>
       </button>
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="scissors-btn">
-        <p class="pb-1 text-base font-medium text-grey-darker">SCISSORS!</p> 
+      <button class="p-1 rounded bg-gray-100 border border-gray" id="scissors-btn">
+        <p class="pb-1 text-base font-medium text-gray-700">SCISSORS!</p> 
         <img src="src/img/scissors.png" width="120"/>
       </button>
     </div>
@@ -69,20 +69,20 @@
 <!--/PLAYER 1 SPACE END -->
 <!--PLAYER 2 SPACE-->
 <div id="player2_space" class="pr-1 pt-1 w-1/2 justify-center">
-  <div class="pt-2 pb-2 justify-center bg-grey-lighter border-b border-grey">
-    <label class="text-xl text-center block uppercase font-medium text-base text-grey-darker" for="name">PLAYER 2 - MAKE YOUR DRAW!</label>
+  <div class="pt-2 pb-2 justify-center bg-gray-200 border-b border-gray">
+    <label class="text-xl text-center block uppercase font-medium text-base text-gray-700" for="name">PLAYER 2 - MAKE YOUR DRAW!</label>
   </div>
-    <div class="bg-grey-light flex justify-around p-3 pl-8 pr-8">
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="rock-btn-2">
-        <p class="pb-1 text-base font-medium text-grey-darker">ROCK!</p>
+    <div class="bg-gray-400 flex justify-around p-3 pl-8 pr-8">
+      <button class="p-1 rounded bg-gray-100 border border-gray" id="rock-btn-2">
+        <p class="pb-1 text-base font-medium text-gray-700">ROCK!</p>
         <img src="src/img/rock.png" width="120"/>
       </button>
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="paper-btn-2">
-        <p class="pb-1 text-base font-medium text-grey-darker">PAPER!</p>
+      <button class="p-1 rounded bg-gray-100 border border-gray" id="paper-btn-2">
+        <p class="pb-1 text-base font-medium text-gray-700">PAPER!</p>
         <img src="src/img/paper.png" width="120"/>
       </button>
-      <button class="p-1 rounded bg-grey-lightest border border-grey" id="scissors-btn-2">
-        <p class="pb-1 text-base font-medium text-grey-darker">SCISSORS!</p>
+      <button class="p-1 rounded bg-gray-100 border border-gray" id="scissors-btn-2">
+        <p class="pb-1 text-base font-medium text-gray-700">SCISSORS!</p>
         <img src="src/img/scissors.png" width="120"/>
       </button>
     </div>
@@ -91,15 +91,15 @@
 <!-- /PLAYER 2 SPACE END -->
 <div class ="flex flex-wrap justify-center mt-2">
   <!--DRAW MESSAGES-->
-  <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-grey-light border-b border-grey-light border-t border-grey-light self-center text-xl">
+  <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-gray-400 border-b border-gray-400 border-t border-gray-400 self-center text-xl">
     <div class="text-center" id="player1_selection"></div>
   </div>
-    <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-light border-t border-grey-light text-xl self-center">
+    <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-gray-400 border-t border-gray-400 text-xl self-center">
       <div class="text-center" id="player2_selection"></div>
     </div>
   </div>
   <div class="flex-wrap">
-    <div class="h-12 p-2 mt-2 mb-2 border-b-2 border-teal-darker border-t-2 border-teal-darker bg-grey-lighter justify-center text-center text-xl font-semibold">
+    <div class="h-12 p-2 mt-2 mb-2 border-b-2 border-teal-800 border-t-2 border-teal-800 bg-gray-200 justify-center text-center text-xl font-semibold">
       <div id="display_result"></div>
     </div>
   </div>
@@ -109,11 +109,11 @@
       <p>CURRENT SCORE:</p>
     </div>   
       <div class ="flex flex-wrap justify-center mt-2">
-        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-grey-light border-b border-grey-light border-t border-grey-light self-center text-xl">
+        <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-r-4 border-gray-400 border-b border-gray-400 border-t border-gray-400 self-center text-xl">
           <div class="text-center" id="player1_name"></div>
           <div class="text-center font-semibold" id="display_score_player1"></div>
         </div>
-      <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-grey-light border-t border-grey-light text-xl self-center">
+      <div class="w-1/2 p-2 h-10 flex flex-wrap justify-center border-b border-gray-400 border-t border-gray-400 text-xl self-center">
         <div class="text-center" id="player2_name"></div>
         <div class="text-center font-semibold" id="display_score_player2"></div>
       </div>
@@ -182,19 +182,19 @@
     disp_player2score.innerHTML = `&nbsp;:&nbsp;${scorePlayer2}`
     
     if (scorePlayer1 > scorePlayer2) {
-        disp_player1score.classList = "text-green-dark font-semibold"
-        disp_player2score.classList = "text-red-dark font-semibold"
+        disp_player1score.classList = "text-green-600 font-semibold"
+        disp_player2score.classList = "text-red-600 font-semibold"
         disp_player1score.innerHTML = `&nbsp;:&nbsp;${scorePlayer1}`
         disp_player2score.innerHTML = `&nbsp;:&nbsp;${scorePlayer2}`
 
     } else if (scorePlayer1 < scorePlayer2) {
-        disp_player1score.classList = "text-red-dark font-semibold"
-        disp_player2score.classList = "text-green-dark font-semibold"
+        disp_player1score.classList = "text-red-600 font-semibold"
+        disp_player2score.classList = "text-green-600 font-semibold"
         disp_player1score.innerHTML = `&nbsp;:&nbsp;${scorePlayer1}`
         disp_player2score.innerHTML = `&nbsp;:&nbsp;${scorePlayer2}`
     } else {
-        disp_player1score.classList = "text-grey-darker font-semibold"
-        disp_player2score.classList = "text-grey-darker font-semibold"
+        disp_player1score.classList = "text-gray-700 font-semibold"
+        disp_player2score.classList = "text-gray-700 font-semibold"
         disp_player1score.innerHTML = `&nbsp;:&nbsp;${scorePlayer1}`
         disp_player2score.innerHTML = `&nbsp;:&nbsp;${scorePlayer2}`
     }
